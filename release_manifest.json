@@ -1,0 +1,723 @@
+{
+  "source_commit": "24384bcb01c143858dfe810318d863863757ff5f",
+  "scope": "PACLIC 2026 v2 corpus only",
+  "dataset": {
+    "id": "yzk/veda-ocr-rv-ms-noto-v2",
+    "revision": "7225f9adb86af6d63316b1e5a60b2b8de46e320c"
+  },
+  "initial_model": {
+    "id": "yzk/trocr-large-printed-sanskrit-iso-preadapt",
+    "revision": "6dc79fc60cb0f8149b234478b46062c7b8ac732f"
+  },
+  "adaptations": [
+    "Portable 15-cell main-grid and 27-cell low-data launcher; original training and decoding values retained.",
+    "Default input changed from local CSV to the immutable Hub dataset and initialization pins.",
+    "Logging disabled; infrastructure paths, account labels, and issue references removed.",
+    "Shared helper definitions extracted to omit unrelated study launchers and data loaders.",
+    "Upstream CSV filenames accepted by the v2 renderer without a historical image-directory dependency.",
+    "Numeric summaries copied with provenance strings sanitized; numerical values audited unchanged.",
+    "Source tests retained for included APIs; internal manuscript and omitted-launcher checks removed or redirected to released artifacts."
+  ],
+  "result_files": 38,
+  "result_bytes": 1565673,
+  "numeric_values_verified_against_source": 38155,
+  "code_and_tests": [
+    {
+      "path": "scripts/__init__.py",
+      "source_path": "scripts/__init__.py",
+      "source_sha256": "9595532ab77de469cdfb6fe3708f125935eb97eb31808855f40e5888e1830dcd",
+      "release_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/data/__init__.py",
+      "source_path": "scripts/data/__init__.py",
+      "source_sha256": "d792acb52e2f850e2c8506f6749e149974d81b58490250eb37edc63a6756c28a",
+      "release_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/data/build_v2_corpus.py",
+      "source_path": "scripts/data/build_v2_corpus.py",
+      "source_sha256": "0b30da2991c4f4c664e467e5d1b81ee4ff5b03b0a417946383e0c7796d4408a1",
+      "release_sha256": "56ffe979e19d1cb8566b32566f4b65078dc731ee2b33a362446286a63a766772",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/data/render_accent_test_images.py",
+      "source_path": "scripts/data/render_accent_test_images.py",
+      "source_sha256": "6190c50420b2b10224a59c95c582ee145176459fafe663404c2cbc25b701acc8",
+      "release_sha256": "aa7df34f5fd6f51c43b4accf83cc14b8753eb8b7bfda427bb3ce19597fca77e7",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/data/vedic_accent_marks.py",
+      "source_path": "scripts/data/vedic_accent_marks.py",
+      "source_sha256": "c7aadb15e14d5540f3142397815edc08742b344a6f2a94f12c2bf9594408f648",
+      "release_sha256": "209f80db326a9d104291ee9621e31cd55b408e91be3fc64490924f5f975c9a17",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/__init__.py",
+      "source_path": "scripts/evaluation/__init__.py",
+      "source_sha256": "cccac918b7a9526d9236737527b5906b591a0a70729e3abb91a1886d5a26b332",
+      "release_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/accent_metrics.py",
+      "source_path": "scripts/evaluation/accent_metrics.py",
+      "source_sha256": "9a5939891aaab75ee81790dd66b0ac75da4a59f447b57282ccb5a0849c2fec18",
+      "release_sha256": "84b30c29b841b2b0eb77458afab46984fd31abe17c5278c3310862b50a1ae108",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/aggregate_accent_ratio_multiseed.py",
+      "source_path": "scripts/evaluation/aggregate_accent_ratio_multiseed.py",
+      "source_sha256": "d8614676d817756bbdc4c89a5bac1bda622dfbcb435a6acf39a1e1da4c770507",
+      "release_sha256": "7ddb07bff10b838f31a81e0f10690112ad424911e718f71c2044ef7548bbdf0e",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/build_paclic_accent_transfer_analysis.py",
+      "source_path": "scripts/evaluation/build_paclic_accent_transfer_analysis.py",
+      "source_sha256": "e868e06eca180fb15e4e8a9061a60033cad5527e71fe868c599e990073ce57c3",
+      "release_sha256": "0f37391911997843535647b5a0267d7a2e0ba7f29fd217707bdf0229be7527d2",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/build_paclic_paper_figures.py",
+      "source_path": "scripts/evaluation/build_paclic_paper_figures.py",
+      "source_sha256": "6865d1556d1b45545eb8e9789233a000ee57762dcc21824596321e3efa1efa5e",
+      "release_sha256": "ae1996d58bb92581bf2ff1b7713de6f6a2d2b5e30fbff9b95a3547b1d0ac30b2",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/build_paclic_v2_accent_error_decomposition.py",
+      "source_path": "scripts/evaluation/build_paclic_v2_accent_error_decomposition.py",
+      "source_sha256": "aa1dedaec8760b72a7926592225c50487d2cc293028b4c12eca5c76496ab49a7",
+      "release_sha256": "69d64e48bdef06e757d5fed145ea3a5497884fbaa4fe261953ce13b1a45b40bc",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/build_paclic_v2_data_efficiency_analysis.py",
+      "source_path": "scripts/evaluation/build_paclic_v2_data_efficiency_analysis.py",
+      "source_sha256": "47164dd0f1aa3d523f239bebb04f08ccd92d51d1ddcedd1a045356bc63cbd84b",
+      "release_sha256": "44c32a23b2606836dccb15a0cc4bc79f0f644522755950d44630163b0793a64a",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/build_paclic_v2_effect_sizes_and_plateau.py",
+      "source_path": "scripts/evaluation/build_paclic_v2_effect_sizes_and_plateau.py",
+      "source_sha256": "d2bed9d951a53df4da766a35c917c73b0fdfe38b8d2f4fe8996942df47df0339",
+      "release_sha256": "1e686dd61200acf78fb8e98a6c7cd3a632dda8047da3761393247281921837b2",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/build_paclic_v2_maingrid_analysis.py",
+      "source_path": "scripts/evaluation/build_paclic_v2_maingrid_analysis.py",
+      "source_sha256": "0e4623ad14309fd351452d273fe18b009311fd5f1c7950ad2cca8c18bba29201",
+      "release_sha256": "8b2bc8b6ed1ef81586b87f84812693c8241325f2b192b0b7b2420b11f9fd6edc",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/checkpoint_selection_sensitivity_v2.py",
+      "source_path": "scripts/evaluation/checkpoint_selection_sensitivity_v2.py",
+      "source_sha256": "746ca5a77633399187acbceb8e5c8ad59d2cbba5bd35d09be930024da595f76c",
+      "release_sha256": "eb0ae4431e5ece4b27e9ad069496e837be78b5efead5b53f296a03569bb82106",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/evaluate_initial_checkpoint.py",
+      "source_path": "scripts/evaluation/evaluate_initial_checkpoint.py",
+      "source_sha256": "44d36f4251f3b2b6083905fa737eb259e4bcb606eb3880844a70b55c05e23bab",
+      "release_sha256": "c4cfc11314c79e39e14568b41ec80184bd9192f323b97eb12b09fec920166f76",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/prediction_io.py",
+      "source_path": "scripts/training/trocr/ms_transfer_contract.py",
+      "source_sha256": "fa15d2502cd4073dde8ff2e4c2f3a386ce1ab979d2320987e108bfdaabd6cc70",
+      "release_sha256": "9adc28df98e8e4c0e696aa8a17e9f3939517fae4e8a2e8ea39ba72396dff710e",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/prediction_metrics.py",
+      "source_path": "scripts/evaluation/prediction_metrics.py",
+      "source_sha256": "57af4c7e3b711dd1fffe4c8951a2c31ba210f4c8bca27236f6848368278c7e42",
+      "release_sha256": "6952bdad15c5cfede22539fc42a15f575474cb34520cbe999ee7662739b6d794",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/evaluation/selection_helpers.py",
+      "source_path": "scripts/evaluation/checkpoint_selection_sensitivity.py",
+      "source_sha256": "195a9dd045c20b106ac570e17c3a9797e29e1738c3992d6f9808fa398340fbca",
+      "release_sha256": "e2ed638ccfe7ecab5b16d144aeeb1a1810f3f181a386ff87c99826d71d373d3b",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/regenerate.py",
+      "source_path": null,
+      "source_sha256": null,
+      "release_sha256": "a450a2141854fc63cd5703b6797bddafda0900cae888ef59d27ff303ed69ac1e",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/reproduce.py",
+      "source_path": null,
+      "source_sha256": null,
+      "release_sha256": "4727f541eba21fcf5029b8325b533e71608d0366a802ca045bb75bc7f16b672e",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/__init__.py",
+      "source_path": "scripts/training/__init__.py",
+      "source_sha256": "7e50345f5a8f89db3c2b99e727d148d2e2f4821d5283468d8f1115d36e3273db",
+      "release_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/trocr/__init__.py",
+      "source_path": "scripts/training/trocr/__init__.py",
+      "source_sha256": "fa2b1e9d73d953afc5144299f3785b627487b6c0310ead639b2089fb39eae312",
+      "release_sha256": "fa2b1e9d73d953afc5144299f3785b627487b6c0310ead639b2089fb39eae312",
+      "byte_identical": true
+    },
+    {
+      "path": "scripts/training/trocr/dataset.py",
+      "source_path": "scripts/training/trocr/dataset.py",
+      "source_sha256": "ac4948ec124b1cedf081506f47323b7d3350286148b06689a9b2a2d04e4a6865",
+      "release_sha256": "aba560fb186aa7e9300d97fd4bde94b2d997f67144de5322b6e9c34c0a560b0f",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/trocr/experiment_accent_ratio.py",
+      "source_path": "scripts/training/trocr/experiment_accent_ratio.py",
+      "source_sha256": "7a15b87f2e4573c1d28283df424fed8ce50ebe453db78ebdfe4f54f18f8e11a9",
+      "release_sha256": "0f00d9e8deb414c2b49ac7d51fac746e7e24b87405c7593b3146cd0d66b7fd9a",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/trocr/generation_policy.py",
+      "source_path": "scripts/training/trocr/generation_policy.py",
+      "source_sha256": "d1dd842c8f32bb10494f0c99b0b0983a94d54497a70835139ab9d77f34841b25",
+      "release_sha256": "15b5ab2571949df65c0df44f90da00076d007c89b31077cde5187be167941cbd",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/trocr/metrics.py",
+      "source_path": "scripts/training/trocr/metrics.py",
+      "source_sha256": "c60001abbdb59eab709c5ae6590af5754c3a5acd6b6d9ac8ae5f78237ebf2199",
+      "release_sha256": "a408d1ae2069231412ab1db991d0bf3f5f3f3ace3024d683823f3b936a8cc1be",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/trocr/model_freezing.py",
+      "source_path": "scripts/training/trocr/model_freezing.py",
+      "source_sha256": "7129d9a8397a21b43df82183b0eb95f3f1303faa50c9814f4e17ae721f03f304",
+      "release_sha256": "c1d6ba812354d9070fada530079e7e9ad11d1fcfdb7b6559f22be1d1685e9310",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/trocr/seq2seq_loss.py",
+      "source_path": "scripts/training/trocr/seq2seq_loss.py",
+      "source_sha256": "bed52f41cc8e53913941e310df7eb029874e45d663407091bf0cfe3f09d0b729",
+      "release_sha256": "f9a240da016758ce2acba8e45570eced86f4bcaa66f79cb9357a1180a656879b",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/trocr/train.py",
+      "source_path": "scripts/training/trocr/train.py",
+      "source_sha256": "bebb53901a74d23016182df48fcbb05013aab9afaeb2faf4abde76b49d6824e5",
+      "release_sha256": "218124901148c56e8baef94927b75b833af73708a4e1948dab98124e6b60f5a3",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/utils/__init__.py",
+      "source_path": "scripts/utils/__init__.py",
+      "source_sha256": "bb4d7944b215a81f5a36d7fcb5d808ea8b18616d2d40ebfd46e9d122102ead10",
+      "release_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/utils/transliteration.py",
+      "source_path": "scripts/utils/transliteration.py",
+      "source_sha256": "589b7f07165ab449c73aeb59801f5d544ad1eef655671a993e2b52cb88c8a5da",
+      "release_sha256": "3a7579f984ccb480bdd29f37c246be11f52da50ca6e4eb6e8055df76e5c51a72",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/trocr/conf/experiment.yaml",
+      "source_path": "scripts/training/trocr/conf/experiment.yaml",
+      "source_sha256": "1554334000abb4db5d614470645e6df28aade04c6fc98dc363a8a83f8351057d",
+      "release_sha256": "a75b8c37657461efa6d1b95e9509a69ffb43f07efd738b83e5a3c3298c18f1cc",
+      "byte_identical": false
+    },
+    {
+      "path": "scripts/training/trocr/conf/text/iso.yaml",
+      "source_path": "scripts/training/trocr/conf/text/iso.yaml",
+      "source_sha256": "74a12ee5c7b2c81ed0e83940d5817c0fb377d251596d9b36e9de478641ca24a8",
+      "release_sha256": "30750793111f1ffaf05483838dc33815fc82db5ffe5b2e13934e02d2b9bb91d2",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/__init__.py",
+      "source_path": "tests/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "release_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    {
+      "path": "tests/data/__init__.py",
+      "source_path": "tests/data/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "release_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    {
+      "path": "tests/data/test_build_v2_corpus_repairs.py",
+      "source_path": "tests/data/test_build_v2_corpus_repairs.py",
+      "source_sha256": "4577a73989e15608cd6541a4d083a0267fdade6d951d52917817fd11a4f2c3ec",
+      "release_sha256": "54ea47a384a2373779b7513bc5857894a9508b3b7fa8fd36d284c264afc4cbd3",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/evaluation/__init__.py",
+      "source_path": "tests/evaluation/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "release_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    {
+      "path": "tests/evaluation/test_checkpoint_selection_sensitivity_v2.py",
+      "source_path": "tests/evaluation/test_checkpoint_selection_sensitivity_v2.py",
+      "source_sha256": "57b3aa2b082920ebd9fbadf3fca971f656825d7a493e169bb562ffdaf507e66e",
+      "release_sha256": "1e93ef915edcff303469f13f4b7711e5e0880e7567ec1e5412bad9b465bf81f9",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/evaluation/test_evaluate_initial_checkpoint.py",
+      "source_path": "tests/evaluation/test_evaluate_initial_checkpoint.py",
+      "source_sha256": "803f4ec5dd9f6ede8a0365d2246b04644ceb6609a0a355bc916874b28408fdec",
+      "release_sha256": "fac53d03fe906aa3f11e851e3fbdde63d1ff311e98a6b89b02b1dca0ae24a616",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/evaluation/test_paclic_v2_accent_error_decomposition.py",
+      "source_path": "tests/evaluation/test_paclic_v2_accent_error_decomposition.py",
+      "source_sha256": "a5e39670844d19854c4e0723522aadb152ac81f4b96f730ea51e601fc093dcac",
+      "release_sha256": "da13f780c41c65684b42c2213556a2f14186d76741efaa80c7a82d820becf9f7",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/evaluation/test_paclic_v2_data_efficiency_analysis.py",
+      "source_path": "tests/evaluation/test_paclic_v2_data_efficiency_analysis.py",
+      "source_sha256": "4ea0b15fdc6c0730677d0c5e743d7badf64089a99dc250a6fafb83270e4677c0",
+      "release_sha256": "24c41f03f9df5559f223cccfd82bc83b332584182ca36e93b029db32b030ba9e",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/evaluation/test_paclic_v2_effect_sizes_and_plateau.py",
+      "source_path": "tests/evaluation/test_paclic_v2_effect_sizes_and_plateau.py",
+      "source_sha256": "78373365e3630b173ea49711514c63570836caf480649a8825248bfc2330fefa",
+      "release_sha256": "30b10ec8a3debe85f21d4ee41553c3c5182f7f0f4b503d8f26a8a041e8dcfdf4",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/evaluation/test_paclic_v2_maingrid_analysis.py",
+      "source_path": "tests/evaluation/test_paclic_v2_maingrid_analysis.py",
+      "source_sha256": "8d1f34fe77e105cbef127f12df6a6e09b6cc3be6b102a77a78be6059fa534d3f",
+      "release_sha256": "47928c5e80aeabb9265f99f57b38d2de9cb3ce6477f6b2b4f0a0c94ced00f481",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/evaluation/test_prediction_metrics.py",
+      "source_path": "tests/evaluation/test_prediction_metrics.py",
+      "source_sha256": "15280b249ceb6da7d43553d432ee984878fa72b820dfc2f333a5f8d5a9458d32",
+      "release_sha256": "5bd1f55bb968a253f63add878d2ddcf530759a6a022228b0dfa063ea08f08bd2",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_accent_metrics.py",
+      "source_path": "tests/test_accent_metrics.py",
+      "source_sha256": "360ada5b0e872f9afbe765309028e36bbd222b135de223b2d4d4e656e0fe309e",
+      "release_sha256": "3cee5b2610bea475836e3421e356dc65e7dbbbaa38ac2fa1bef2433ea121e09a",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_experiment_accent_ratio_subset_manifest.py",
+      "source_path": "tests/test_experiment_accent_ratio_subset_manifest.py",
+      "source_sha256": "93e8fd1c5589e200349f77e712378f137b6469382bca2f5a954c75abe131db26",
+      "release_sha256": "df657a9789ff0ab579b358263ef3d2bdfa9ceced1cce173d0b01fc3448381781",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_release_recipes.py",
+      "source_path": null,
+      "source_sha256": null,
+      "release_sha256": "6d83adccf37c4586bf3c7ebb09dfe55a33842d19246c611d07f3c9c49ff4b03f",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_transliteration.py",
+      "source_path": "tests/test_transliteration.py",
+      "source_sha256": "e285f3dfcd2a835035231799187252a7883dea04bcc7e34b11be86812cab2ea4",
+      "release_sha256": "5cc26b88ad962d06cc51fd82b0dcc352f52ecb63ffabcb6a94fadec8118229d7",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_trocr_dataset.py",
+      "source_path": "tests/test_trocr_dataset.py",
+      "source_sha256": "afda7d7465d94bd1be7e0df36eb65fd753db0d3e65784af29fc3b3111858b6b5",
+      "release_sha256": "41a51bb75bfd0fcb1b599032292649877890dd4176ba6144010451f1299922b6",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_trocr_early_stopping.py",
+      "source_path": "tests/test_trocr_early_stopping.py",
+      "source_sha256": "0f25367978bcf69441d0d5476b70a3299b45a3784eec1eeb899f1c3e1cff677a",
+      "release_sha256": "d1eb7dcc8949259cb192780d5be755ae152e2d7d023821c73849bcd8f0282c1c",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_trocr_experiment_naming.py",
+      "source_path": "tests/test_trocr_experiment_naming.py",
+      "source_sha256": "d2600606e0483770a3942402f51d71167a0b481193c9ab1092a6c9d59b633538",
+      "release_sha256": "0c73e5cc4684a62ab351608252dfbd4080661b981a957f194cbf2a6cee54ba61",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_trocr_experiment_provenance.py",
+      "source_path": "tests/test_trocr_experiment_provenance.py",
+      "source_sha256": "0df5c1cade90dceedc68dcf1d98c9724fa4cf02f2f79982073715192147b9cdd",
+      "release_sha256": "5614cc88384b5ae399a610959a2f216327bd21076799bc582872c15dd0f5c735",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_trocr_generation_policy.py",
+      "source_path": "tests/test_trocr_generation_policy.py",
+      "source_sha256": "46e6ea95cf40b6a616e663ea7bfc112b734c7f834d28331c65dae74ba46b855f",
+      "release_sha256": "31279ff366e9928855beeb20f81d9942fc52ee8ee6aef763235bd398d3b77076",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_trocr_hf_dataset.py",
+      "source_path": "tests/test_trocr_hf_dataset.py",
+      "source_sha256": "863a91dd1db225cba7bf60ffc24ac8566009cdd630f397864c9a10a7c7430354",
+      "release_sha256": "4db63573d83d792fc6fa4afe67f97c7d83d3455f1ef54820ad1e35e30fd289b7",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_trocr_metrics.py",
+      "source_path": "tests/test_trocr_metrics.py",
+      "source_sha256": "595a3b4d4f12812e6724993a6d6f365c28b1dfb3860897bf113a03cf519f0ebb",
+      "release_sha256": "9c510c14e691dcd4449bb82e3f12ae3e147ec15b7ecf1776bd7e8bceb35355b0",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_trocr_model_freezing.py",
+      "source_path": "tests/test_trocr_model_freezing.py",
+      "source_sha256": "04a9b1279a6414ace8e6c3700f758fa5af4fb2f9490c0f5f6907dd18bb44a557",
+      "release_sha256": "01955a371aaf7eee4b2e8acd8dcbd2d2af3212a795a724be638c69957e82577e",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_trocr_seq2seq_loss.py",
+      "source_path": "tests/test_trocr_seq2seq_loss.py",
+      "source_sha256": "0157d7ccc998e1ddcb978f7cd579bdf77f6a52471403e186e5296169c7d73da9",
+      "release_sha256": "3c803fb5b19e1cd2ec7be0506945c51e0ece35f1a169ec460cd9066ad4cacaef",
+      "byte_identical": false
+    },
+    {
+      "path": "tests/test_vedic_accent_marks.py",
+      "source_path": "tests/test_vedic_accent_marks.py",
+      "source_sha256": "375c8a6e6a565220f470874beb5306f0c316987558ec6b4674433481985340af",
+      "release_sha256": "39213e09113afce8a8bb586eed30d48c14492ee94407eb43de1e2dc6925ee016",
+      "byte_identical": false
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "results/paclic-v2-accent-error-decomposition/aggregate.json",
+      "source_bundle": "paclic-v2-accent-error-decomposition",
+      "source_sha256": "ae3b2d22d5994f43d6919debc0753a68af7f4ac76386a54333f419fdd67d0046",
+      "release_sha256": "aa2ff62efec16e73a1643f29b1c55f84754b514d8b254f40841e701ed4d682c7",
+      "bytes": 301877
+    },
+    {
+      "path": "results/paclic-v2-accent-error-decomposition/tables/by_ratio_view.csv",
+      "source_bundle": "paclic-v2-accent-error-decomposition",
+      "source_sha256": "f843225b7d9ed764ef9666f4b456e541a9b517a20abca5ac9748a7d98670ee3c",
+      "release_sha256": "35f926eb6052ec16e74a2caab79119246de1409af475c0c5152f96a0c51ad999",
+      "bytes": 9305
+    },
+    {
+      "path": "results/paclic-v2-accent-error-decomposition/tables/mark_budget.csv",
+      "source_bundle": "paclic-v2-accent-error-decomposition",
+      "source_sha256": "bf6ec2adbe3113f179ef80b9a5bfd6e46152229e534ed4cc6a38a8c2be413b5e",
+      "release_sha256": "62cbd0d16022ee3b14d764084c0f9aabc1fb3398419698e8733e38314584ec0e",
+      "bytes": 1344
+    },
+    {
+      "path": "results/paclic-v2-accent-error-decomposition/tables/misplacement.csv",
+      "source_bundle": "paclic-v2-accent-error-decomposition",
+      "source_sha256": "af15702f3d5a6f84bb8cecc13686abbc551483642b1c40e778244d448745bba3",
+      "release_sha256": "cd14d0cd8035ce1582a43cd847193e6a8c862f3fb6d4259a5f881d90dcc2de68",
+      "bytes": 1380
+    },
+    {
+      "path": "results/paclic-v2-accent-error-decomposition/tables/per_cell.csv",
+      "source_bundle": "paclic-v2-accent-error-decomposition",
+      "source_sha256": "38aa9bd1cc6777edd7d80c347f7b8910e687eedf63d7f93b682f6afafd04a7e0",
+      "release_sha256": "f7785bdacd051a44a8892d9bc7a2ca4db5e9be4cff20f97736d5840a23292a2d",
+      "bytes": 14430
+    },
+    {
+      "path": "results/paclic-v2-accent-error-decomposition/tables/reconciliation.csv",
+      "source_bundle": "paclic-v2-accent-error-decomposition",
+      "source_sha256": "6e6222dad65915fc3eff31ae6d422d354b82357845b815f7d980e20fce71fa2f",
+      "release_sha256": "98dbf3553c01abe05749c2c4fa4a2fb42a197075efd6ce9d50c1e68100d17543",
+      "bytes": 26729
+    },
+    {
+      "path": "results/paclic-v2-accent-error-decomposition/tables/trained_vs_untrained.csv",
+      "source_bundle": "paclic-v2-accent-error-decomposition",
+      "source_sha256": "e753e6db88983f87459a63aacaf9439370dfaa6e0881545523edd3182242f312",
+      "release_sha256": "b0d26cecc91846eda2f61b169293eb2e73f16c94c427b4628667817b2d0f36e5",
+      "bytes": 1848
+    },
+    {
+      "path": "results/paclic-v2-checkpoint-selection-sensitivity/aggregate.json",
+      "source_bundle": "paclic-v2-checkpoint-selection-sensitivity",
+      "source_sha256": "149a68f6c6aa9fc3f833daa93c374dc130ebd651c1aec14fb6b45fb487dc20bf",
+      "release_sha256": "149a68f6c6aa9fc3f833daa93c374dc130ebd651c1aec14fb6b45fb487dc20bf",
+      "bytes": 231112
+    },
+    {
+      "path": "results/paclic-v2-checkpoint-selection-sensitivity/tables/checkpoint_survival.csv",
+      "source_bundle": "paclic-v2-checkpoint-selection-sensitivity",
+      "source_sha256": "79dca41680b98c86fa6089b9d09b4cc95d73915c45f849bbde5b6714651b3f5c",
+      "release_sha256": "adcd98a77da66db08ce27ec1e133b3b9833494da58f89042e02cae9c66009cad",
+      "bytes": 688
+    },
+    {
+      "path": "results/paclic-v2-checkpoint-selection-sensitivity/tables/divergence_exposure.csv",
+      "source_bundle": "paclic-v2-checkpoint-selection-sensitivity",
+      "source_sha256": "be02ea96b465d8549f8e637ff4ea0f04a514997d87909c7e5335681ff26ab7ef",
+      "release_sha256": "035e445aaaa11cec11eea2a1ed2bdb1cb8b43b42331aee1ebd640755662213b8",
+      "bytes": 10939
+    },
+    {
+      "path": "results/paclic-v2-checkpoint-selection-sensitivity/tables/per_ratio_exposure.csv",
+      "source_bundle": "paclic-v2-checkpoint-selection-sensitivity",
+      "source_sha256": "62eec687e63194917f5f342d1fe84c2b1869aad445745780b4687362c80790ef",
+      "release_sha256": "9437687454d74f19517658eebfa87b64057c439a993690ac28677d9ca307ab5a",
+      "bytes": 11290
+    },
+    {
+      "path": "results/paclic-v2-checkpoint-selection-sensitivity/tables/scorable_per_ratio.csv",
+      "source_bundle": "paclic-v2-checkpoint-selection-sensitivity",
+      "source_sha256": "bed358f0cc9a320ef95867d35de44d5af0484645487e839534cf0bfeebb081db",
+      "release_sha256": "c87722203b1763fd0f86eea03b10a9492f3e78ccc754c87f2fe2bd157803057f",
+      "bytes": 13306
+    },
+    {
+      "path": "results/paclic-v2-checkpoint-selection-sensitivity/tables/selection_candidates.csv",
+      "source_bundle": "paclic-v2-checkpoint-selection-sensitivity",
+      "source_sha256": "06df277e0150a23ec99906e410801c7a64b1e67c218920b2520015f0913ea191",
+      "release_sha256": "ed486ee04f84198ac9df08b7441183012ea7a3f9b75c177fb54859dc146bdb66",
+      "bytes": 48200
+    },
+    {
+      "path": "results/paclic-v2-checkpoint-selection-sensitivity/tables/selection_ledger.csv",
+      "source_bundle": "paclic-v2-checkpoint-selection-sensitivity",
+      "source_sha256": "eae916e67a80efcaa783a5c91b89717d1efd43a536a29544ce25e5f4c2db971f",
+      "release_sha256": "92b0e806c22ce36a5228468c03f42f17874701cb67fdf0e485b29a5849ecfab4",
+      "bytes": 15171
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/aggregate.json",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "ac8046bb5385b6a3c2e32b0ae90612948be2a756ad80831b2a9db01d21906c97",
+      "release_sha256": "3e5100db84b8d11e03a0153234dc774cecc6ac37cd26f85369e8007acc4ffb77",
+      "bytes": 544282
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/asymmetry_n1042.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "efe2b3abdcd27ca59e2f80bb641472516f9f2543516c813dbdd6debceefba61e",
+      "release_sha256": "c9a4d4d5e3a1b88c2c5db560199e5a5086dbbb7653a8991cfa5720fbdb3df9a4",
+      "bytes": 577
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/asymmetry_n10420.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "2dc02a4313365bbeb21b2c11e4f993d263eb83b21778a6cc1e759f30a96cd8f6",
+      "release_sha256": "4171b8b3b0fc866c3a28ad62511db2c6857dcec7db525e80aa1c610f2a1f2ce2",
+      "bytes": 573
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/asymmetry_n2605.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "74e5ea8e1b7ec3330e2ad1c0ea024d829c83e09c4e02f49989744bf46125ae55",
+      "release_sha256": "9de51b2ea46f09642784e7933e53e513e7b367c585e85d246dc53828ba12da1d",
+      "bytes": 572
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/asymmetry_n5210.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "3837fdf245f852099a4489f8d837646a0e188574062dec9ee5a0298d3f22b32d",
+      "release_sha256": "088a113b1470b22280e9eabcbd0d061697f35cda3fbea3dc55e3f866027d2820",
+      "bytes": 572
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/curve.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "fca22b2966bc0a0b9fff9c7503a1931d5f88c7a01f7af53233e083f856ebebf4",
+      "release_sha256": "49d76b2df570c7391c65b42dab0bef5a656a5171f3f50b9d339ed1764beada63",
+      "bytes": 15386
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/curve_deltas.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "a5c9ab89d55837e6a6d9292f5940882655b6d13146663f7d83036beaef7578fc",
+      "release_sha256": "1f104d6297c5243ce4e3ac0fd2eeff3ce7b6be5d78d15ff94a2fa13dcb16690e",
+      "bytes": 14004
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/per_seed_n1042.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "2e5aaf726012a46bb4278a6c033f198a890e1b508595c3a674bdb858b1c2ea15",
+      "release_sha256": "b5d360a76b5310a07c6c55e67464600b7617b5948009b6a7bffcd3f89c52ee14",
+      "bytes": 6317
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/per_seed_n10420.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "9bbf69deb8e680d8a46e0b84b86af4e32e39d07820a4b46f5e122cc657e2d29d",
+      "release_sha256": "bc98c558007738742ab8d0a20340aacd3f3a543687ce758173397c35283074be",
+      "bytes": 6222
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/per_seed_n2605.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "52048b372040f0690987f1aecfb7a1ff4f0eb7b70fb266d88b631e7e233aade1",
+      "release_sha256": "680fcffa6e628cc6da81d62c21ea7afa3bdd4dd3e7b78516e9ad9bfdf4474c21",
+      "bytes": 6359
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/per_seed_n5210.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "991b8372c734456a44031bb9a38b5589429f57bbc42d8d9464ac371b97ab0be9",
+      "release_sha256": "6c11f0e794e93663d53961962e221f8adefc87e23d8e670e5a9ea783b9dcd63c",
+      "bytes": 6356
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/provenance.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "28b9242528b41e483845f9c6df7d0bbe5bdf2d71fdd36df53f2f9ed1594aeb31",
+      "release_sha256": "0ccaddae618cba9e62c08e564b3a9c270dd26bd165bdcd6477f3d4b0d47cbf53",
+      "bytes": 9996
+    },
+    {
+      "path": "results/paclic-v2-data-efficiency/tables/step_separability.csv",
+      "source_bundle": "paclic-v2-data-efficiency",
+      "source_sha256": "e7a6a99e59dfbc3df1c983a14e7d63fbd9aa5ec4ca4895d5e62c3136718a6612",
+      "release_sha256": "10c9d30892f127bd543275e459a668db6d5049eee7a3988711701dade203feae",
+      "bytes": 28048
+    },
+    {
+      "path": "results/paclic-v2-effect-sizes-and-plateau/aggregate.json",
+      "source_bundle": "paclic-v2-effect-sizes-and-plateau",
+      "source_sha256": "db406c7ddfd5da3d6d4914c317a0f4cdc72e1b158d1958fb16b9522d9e85b6a4",
+      "release_sha256": "1e4e09f0232db191da3db2b3da27ea57b7e50f0353e5d966e5facba507029d1b",
+      "bytes": 113655
+    },
+    {
+      "path": "results/paclic-v2-effect-sizes-and-plateau/tables/endpoint_dz_leave_one_seed_out.csv",
+      "source_bundle": "paclic-v2-effect-sizes-and-plateau",
+      "source_sha256": "2d4df1f2992e5f42de56747d431ffcb203f646ecc58cbb79cbf388ca31cc9874",
+      "release_sha256": "7989a6b6384db7097d9a74aa493bde24f1cc96cf9963973d9885c00b838d79fe",
+      "bytes": 1418
+    },
+    {
+      "path": "results/paclic-v2-effect-sizes-and-plateau/tables/endpoint_effect_sizes.csv",
+      "source_bundle": "paclic-v2-effect-sizes-and-plateau",
+      "source_sha256": "d7d41e96ee6276ede661db008d49c59fefd0e37a5d2a24513b896a2c15411007",
+      "release_sha256": "e1223a862e69ab597f8c92a2cc5fcdf9ac9654367069e082cb78c040e0cb0911",
+      "bytes": 4334
+    },
+    {
+      "path": "results/paclic-v2-effect-sizes-and-plateau/tables/plateau_comparison.csv",
+      "source_bundle": "paclic-v2-effect-sizes-and-plateau",
+      "source_sha256": "c3a3924bbe7eef99bc5a59b8fb4a9c1b359a5a3616a7a2f272b28ef01d9fb3d2",
+      "release_sha256": "744adf7916c77f1cd26e5a916ba9a39ca36a20994fc09e8487a891a6416a3ca9",
+      "bytes": 4065
+    },
+    {
+      "path": "results/paclic-v2-effect-sizes-and-plateau/tables/plateau_separability.csv",
+      "source_bundle": "paclic-v2-effect-sizes-and-plateau",
+      "source_sha256": "5d0046b4349e876cb54854576d5366f2de3ff4d6b19c72b5e09d5257e4a1d4b6",
+      "release_sha256": "0aeda6a24a3331a6da4bf5c43156c76ef3f7631530d7ea8fff858513b4ef9030",
+      "bytes": 5415
+    },
+    {
+      "path": "results/paclic-v2-effect-sizes-and-plateau/tables/reconciliation.csv",
+      "source_bundle": "paclic-v2-effect-sizes-and-plateau",
+      "source_sha256": "2fa2d264012ade1617cff9b5d85161ec53364567acb1f27bab7793f20d96af66",
+      "release_sha256": "c4610eb22622e313501ec2f5dbd039727dec8d7e6c4a42c415bbe69556f6a43b",
+      "bytes": 11629
+    },
+    {
+      "path": "results/paclic-v2-maingrid/aggregate.json",
+      "source_bundle": "paclic-v2-maingrid",
+      "source_sha256": "ae02749d98e9acc86fd89a4e34a662cc0d0ccda84b0eab40dc877607f89de8b1",
+      "release_sha256": "b9e76fc604cabebedfcc32c545c094a8491979568d2c613941decc061496e9cd",
+      "bytes": 72464
+    },
+    {
+      "path": "results/paclic-v2-maingrid/tables/asymmetry.csv",
+      "source_bundle": "paclic-v2-maingrid",
+      "source_sha256": "2dc02a4313365bbeb21b2c11e4f993d263eb83b21778a6cc1e759f30a96cd8f6",
+      "release_sha256": "4171b8b3b0fc866c3a28ad62511db2c6857dcec7db525e80aa1c610f2a1f2ce2",
+      "bytes": 573
+    },
+    {
+      "path": "results/paclic-v2-maingrid/tables/per_ratio.csv",
+      "source_bundle": "paclic-v2-maingrid",
+      "source_sha256": "2497cae98f9c24f851028bbc098987241e4ce5d97a378d2ea9d9ba9676f76233",
+      "release_sha256": "54c23d79d9d496c1ab2172b445433f11a81135cd6d2220b1bef53162ef9a3f10",
+      "bytes": 14795
+    },
+    {
+      "path": "results/paclic-v2-maingrid/tables/per_seed.csv",
+      "source_bundle": "paclic-v2-maingrid",
+      "source_sha256": "5545029aab150a0613cea0b87dbc6014c07eabc017c71d520ef31a24ace1a04b",
+      "release_sha256": "b6b61847c3e1f7c0e1838a9b68c1c9f7f01a146ae468aaf0ef8a537298ed2298",
+      "bytes": 9874
+    },
+    {
+      "path": "results/paclic-v2-maingrid/tables/retention_adaptation.csv",
+      "source_bundle": "paclic-v2-maingrid",
+      "source_sha256": "d372351164eb464bc279237aab16ace382dcccf785b25a901233d08f57f3f52c",
+      "release_sha256": "674a89431336754673196c6f8639ef12e7132eecd89dd946e1f560f2fe9b3ea6",
+      "bytes": 568
+    }
+  ],
+  "validation": {
+    "python": "3.13.15",
+    "lock": "uv lock --offline completed; uv lock --offline --check passed",
+    "environment": "uv sync --offline passed, all dependency versions match source lock",
+    "cpu_config": "main-grid cell 6 resolved through the portable launcher and actual Hydra entrypoint",
+    "tables": "15 regenerated CSVs match the released CSV cells exactly",
+    "figures": "3 figures regenerated as PNG and PDF without GPUs",
+    "exclusion_scan_matches": 0,
+    "source_worktree_changes": 0,
+    "limitations": [
+      "GPU training and full inference were not run.",
+      "Public Hub visibility was not checked because network access is unavailable.",
+      "Raw upstream split inputs and the exact font binary are required for a complete corpus rebuild."
+    ],
+    "pytest": "667 passed, 0 skipped, CPU only (25.77 s)"
+  }
+}

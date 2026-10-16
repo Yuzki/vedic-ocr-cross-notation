@@ -1,0 +1,25 @@
+comparison,dropped_seed,n,dz,is_confidence_interval
+zero_shot_cer(MS→RV − RV→MS),42,2,49.1344,False
+zero_shot_cer(MS→RV − RV→MS),43,2,29.9791,False
+zero_shot_cer(MS→RV − RV→MS),44,2,18.6252,False
+zero_shot_chrf(MS→RV − RV→MS),42,2,-101.0221,False
+zero_shot_chrf(MS→RV − RV→MS),43,2,-19.6885,False
+zero_shot_chrf(MS→RV − RV→MS),44,2,-16.4814,False
+zero_shot_accent_f1(MS→RV − RV→MS),42,2,-15.2703,False
+zero_shot_accent_f1(MS→RV − RV→MS),43,2,-443.1748,False
+zero_shot_accent_f1(MS→RV − RV→MS),44,2,-14.7628,False
+in_domain_cer(MS_own − RV_own),42,2,0.0971,False
+in_domain_cer(MS_own − RV_own),43,2,-0.3409,False
+in_domain_cer(MS_own − RV_own),44,2,-1.2172,False
+rv_primary_add_ms:rv_retention_cer,42,2,41.4365,False
+rv_primary_add_ms:rv_retention_cer,43,2,14.9580,False
+rv_primary_add_ms:rv_retention_cer,44,2,10.9994,False
+rv_primary_add_ms:ms_adaptation_accent_f1,42,2,838.7421,False
+rv_primary_add_ms:ms_adaptation_accent_f1,43,2,216.8265,False
+rv_primary_add_ms:ms_adaptation_accent_f1,44,2,292.4207,False
+ms_primary_add_rv:ms_retention_cer,42,2,-0.0073,False
+ms_primary_add_rv:ms_retention_cer,43,2,-0.5303,False
+ms_primary_add_rv:ms_retention_cer,44,2,0.9486,False
+ms_primary_add_rv:rv_adaptation_accent_f1,42,2,344.7157,False
+ms_primary_add_rv:rv_adaptation_accent_f1,43,2,287.3114,False
+ms_primary_add_rv:rv_adaptation_accent_f1,44,2,1725.3104,False

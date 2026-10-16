@@ -1,0 +1,5 @@
+comparison,n,diff_mean,diff_ci95_lo,diff_ci95_hi,direction,sign_consistent,per_seed_diff
+zero_shot_cer(MS→RV − RV→MS),3,0.03267209,0.02954571,0.03579847,b>a,True,42:0.034024;43:0.031535;44:0.032456
+zero_shot_chrf(MS→RV − RV→MS),3,-5.14067761,-5.73579213,-4.54556309,b<a,True,42:-5.414309;43:-4.968837;44:-5.038886
+zero_shot_accent_f1(MS→RV − RV→MS),3,-0.03186740,-0.03610882,-0.02762597,b<a,True,42:-0.032905;43:-0.029897;44:-0.032800
+in_domain_cer(MS_own − RV_own),3,-0.00063054,-0.00409789,0.00283681,mixed,False,42:-0.002066;43:-0.000548;44:0.000722

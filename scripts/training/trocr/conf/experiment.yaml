@@ -1,0 +1,86 @@
+defaults:
+  - _self_
+  - text: iso
+rv_ratio: 0.5
+model:
+  base: "yzk/trocr-large-printed-sanskrit-iso-preadapt"
+  revision: "6dc79fc60cb0f8149b234478b46062c7b8ac732f"
+  freeze: none
+data:
+  source: hf
+  image_root: data
+  rv:
+    train: "data/datasets/rv_v2/train_dataset.csv"
+    val: "data/datasets/rv_v2/val_dataset.csv"
+    test: "data/datasets/rv_v2/test_dataset.csv"
+  ms:
+    train: "data/datasets/ms_v2/train_dataset.csv"
+    val: "data/datasets/ms_v2/val_dataset.csv"
+    test: "data/datasets/ms_v2/test_dataset.csv"
+  hf:
+    dataset_id: "yzk/veda-ocr-rv-ms-noto-v2"
+    revision: "7225f9adb86af6d63316b1e5a60b2b8de46e320c"
+    token: null
+    image_column: image
+    text_column: text
+    rv:
+      train: rv_train
+      val: rv_val
+      test: rv_test
+    ms:
+      train: ms_train
+      val: ms_val
+      test: ms_test
+generation:
+  max_length: 256
+  early_stopping: true
+  no_repeat_ngram_size: 3
+  length_penalty: 2.0
+  num_beams: 4
+  decoder_start_token_id: null
+params:
+  max_length: 256
+  train_batch_size: 16
+  eval_batch_size: 16
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  lr_scheduler_type: "linear"
+  num_train_epochs: 20
+  logging_steps: 50
+  save_strategy: "epoch"
+  eval_strategy: "epoch"
+  save_total_limit: 2
+  fp16: true
+  num_workers: 4
+  load_best_model_at_end: true
+  greater_is_better: false
+  use_chrf: true
+total_train_samples: 10420
+seed: 42
+parallel_subset_seed: null
+eval_targets: ["rv", "ms"]
+best_model_policy: "dominant_cer"
+best_model_tie_breaker: "avg_cer"
+skip_final_eval: false
+augmentation:
+  enabled: false
+  affine_degrees: 2
+  affine_translate: 0.02
+  affine_scale_min: 0.95
+  affine_scale_max: 1.02
+  color_jitter_brightness: 0.15
+  color_jitter_contrast: 0.15
+  blur_kernel: 3
+  blur_sigma_min: 0.1
+  blur_sigma_max: 1.0
+run_suffix: null
+output_dir: "./outputs/experiments"
+report_to: "none"
+wandb_mode: "disabled"
+wandb:
+  project: "vedic-ocr-accent-experiment"
+  tags: null
+hydra:
+  run:
+    dir: outputs/hydra/${now:%Y-%m-%d}/${now:%H-%M-%S}

@@ -1,0 +1,3 @@
+run_name,rv_ratio,seed,checkpoint_dir,step,epoch,attribution,usable_for_reinference,n_shared_epochs,max_abs_trajectory_delta,trainer_state_best_metric,results_json_best_metric,trainer_state_best_model_checkpoint
+rv_75_ms_25_seed_44,0.75,44,checkpoint-5216,5216,16,orphan_not_the_reported_run,False,16,0.004393716249386351,0.04005891016200295,0.040353460972017675,outputs/experiments_paclic_v2_maingrid/rv_75_ms_25_seed_44/checkpoints/checkpoint-5216
+rv_75_ms_25_seed_44,0.75,44,checkpoint-6194,6194,19,orphan_not_the_reported_run,False,19,0.004393716249386351,0.04005891016200295,0.040353460972017675,outputs/experiments_paclic_v2_maingrid/rv_75_ms_25_seed_44/checkpoints/checkpoint-5216
